@@ -1,0 +1,22 @@
+{
+  "name": "webpack-teste",
+  "version": "1.0.0",
+  "description": "Projeto de teste para uso de webpack",
+  "main": "''",
+  "scripts": {
+    "start": "webpack-dev-server --port 9999 --content-base build",
+    "build": "webpack"
+  },
+  "author": "Renato Pacheco <renato.pacheco@outloock.com>",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.19.0",
+    "ts-loader": "^3.1.1",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1"
+  }
+}

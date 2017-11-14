@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outDir": "src/ts",
+        "module": "commonjs",
+        "noEmitOnError": true,
+        "sourceMap": true,
+        "declaration": false,
+        "emitBOM": true
+    },
+    "include": [
+        "src/ts/**/*.ts",
+        "!src/**/*.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
