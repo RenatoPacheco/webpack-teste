@@ -1,8 +1,13 @@
+const webpack = require('webpack');
 const path = require('path');
+
+const resolvePath = (pathToResolve = '') => path.resolve(__dirname, pathToResolve);
+const isProductionEnvironment = process.env.NODE_ENV === 'production'
+
 module.exports = {
-    entry: path.resolve(__dirname, 'src/ts/app.ts'),
+    entry: resolvePath('src/ts/app.ts'),
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: resolvePath('build'),
         filename: 'bundle.js'
     },
     devtool: 'source-map',
@@ -14,12 +19,27 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                include: [path.resolve(__dirname, 'src/less')],
+                include: [resolvePath('src/less')],
                 loader: 'style-loader!css-loader!less-loader'
             }
         ]
     },
     resolve: {
-        extensions: ['*', '.webpack.js', '.web.js', '.js', '.json', '.ts', '.less']
-    }
+        extensions: ['*', '.webpack.js', '.web.js', '.js', '.json', '.ts', '.less'],
+        alias: {
+            "@styles": resolvePath('src/less'),
+            "@scripts": resolvePath('src/ts')
+        }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+        })
+    ],
+    devServer: {
+        contentBase: resolvePath('build'),
+        port: 9999,
+        open: true
+    },
 }

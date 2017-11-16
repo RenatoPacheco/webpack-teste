@@ -4,13 +4,21 @@
   "description": "Projeto de teste para uso de webpack",
   "main": "''",
   "scripts": {
-    "start": "webpack-dev-server --port 9999 --content-base build",
-    "build": "webpack"
+    "start": "webpack-dev-server",
+    "build": "webpack --progress --colors -p"
   },
   "author": "Renato Pacheco <renato.pacheco@outloock.com>",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@types/blueimp-md5": "^2.7.0",
+    "@types/bootstrap": "^3.3.36",
+    "@types/jquery": "^3.2.16",
+    "blueimp-md5": "^2.10.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^1.12.4"
+  },
   "devDependencies": {
+    "awesome-typescript-loader": "^3.3.0",
     "css-loader": "^0.28.7",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
