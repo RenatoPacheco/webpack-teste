@@ -1,15 +1,17 @@
 const webpack = require('webpack');
 const path = require('path');
+const entry = require('webpack-glob-entry')
 
 const resolvePath = (pathToResolve = '') => path.resolve(__dirname, pathToResolve);
-const isProductionEnvironment = process.env.NODE_ENV === 'production'
+const isProductionEnvironment = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    entry: resolvePath('src/ts/app.ts'),
-    output: {
-        path: resolvePath('build'),
-        filename: 'bundle.js'
-    },
+    entry: entry('./src/ts/app.ts', './src/ts/views/*.ts'),
+	output: {
+		path: resolvePath('build/assets/js'),
+		filename: "[name].bundle.js",
+		chunkFilename: "[id].chunk.js"
+	},
     devtool: 'source-map',
     module: {
         loaders: [
@@ -35,6 +37,10 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "commons",
+            filename: 'commons.js'
         })
     ],
     devServer: {
