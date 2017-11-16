@@ -6,7 +6,11 @@
         "noEmitOnError": true,
         "sourceMap": true,
         "declaration": false,
-        "emitBOM": true
+        "emitBOM": true,
+        "baseUrl": ".",
+        "paths": {
+            "@scripts/*": ["./src/ts/*"]
+         }
     },
     "include": [
         "src/ts/**/*.ts",

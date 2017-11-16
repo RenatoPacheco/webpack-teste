@@ -1,7 +1,13 @@
 //debugger;
-import './../less/index' 
-import { sayHelloTo } from './hello'
-const span = document.createElement('span');
-span.innerText = sayHelloTo('Javascript Developer');
+import '@styles' 
+import { sayHelloTo } from '@scripts/helpers'
+import md5 = require('blueimp-md5');
 
-document.body.appendChild(span);
+const h1 = document.createElement('h1');
+h1.innerText = sayHelloTo('Javascript - Developer');
+
+const p = document.createElement('p');
+p.innerHTML = '"<strong>JHIKHUKJ</strong>" em md5:<strong>' + md5('JHIKHUKJ') + '</strong>';
+
+document.body.appendChild(h1);
+document.body.appendChild(p);
