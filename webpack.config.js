@@ -3,7 +3,8 @@ const path = require('path');
 const entry = require('webpack-glob-entry')
 
 const resolvePath = (pathToResolve = '') => path.resolve(__dirname, pathToResolve);
-const isProductionEnvironment = process.env.NODE_ENV === 'production';
+const joinPath = (...pathToResolve) => path.join(__dirname, pathToResolve);
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
     entry: entry('./src/ts/app.ts', './src/ts/views/*.ts'),
@@ -37,6 +38,7 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
+            'window.jQuery': 'jquery',
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: "commons",
