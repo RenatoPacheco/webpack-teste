@@ -39,6 +39,7 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
+            'toastr': 'toastr',
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: "commons",

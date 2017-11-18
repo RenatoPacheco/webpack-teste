@@ -42,7 +42,7 @@ gulp.task('less', () => {
         './src/less/app.less'])
       .pipe(less())
       .pipe(isProduction ? cssmin() : print((filepath) => "Não mimificando em dev: " + filepath))
-      .pipe(gulp.dest(function (file) {
+      .pipe(gulp.dest((file) => {
         return file.base.replace(dirBase.less, dirBase.css);
       }));
 });

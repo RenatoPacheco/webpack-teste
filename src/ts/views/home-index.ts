@@ -1,4 +1,6 @@
 //debugger;
+import 'bootstrap'
+import 'bootstrap-select'
 import { sayHelloTo } from '@scripts/helpers'
 import md5 = require('blueimp-md5');
 
@@ -11,3 +13,4 @@ p.innerHTML = '"<strong>JHIKHUKJ</strong>" em md5:<strong>' + md5('JHIKHUKJ') + 
 document.body.appendChild(h1);
 document.body.appendChild(p);
 console.log($('body h1').html());
+toastr.warning('Mensagem informativa.', 'Informação');
