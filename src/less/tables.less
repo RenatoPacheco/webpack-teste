@@ -1,0 +1,70 @@
+﻿@import "../../node_modules/bootstrap/less/tables.less";
+
+.table {
+    thead {
+        background-color: @brand-primary;
+        color: #fff;
+        th {
+            border:1px solid darken(@brand-primary, 25%) !important;
+            text-indent: 10px;
+        }
+    }
+    tr {
+        cursor:default;
+    }
+    td * {
+        vertical-align:middle;
+    }
+    &[role="list"] {
+        background-color: @table-bg;
+
+         *[role="heading"], *[role="listitem"] {
+            padding: @table-cell-padding;
+            line-height: @line-height-base;
+            vertical-align: top;
+            border-top: 1px solid @table-border-color;
+            cursor:default;
+        }
+
+         *[role="heading"] {
+            vertical-align: bottom;
+            border-bottom: 0;
+            background-color: @brand-primary;
+            color: #fff;
+            * {
+                vertical-align:middle;
+            }
+         }
+    }
+}
+
+.table-striped {
+    *[role="listitem"] {
+        &:nth-of-type(odd) {
+            background-color: @table-bg-accent;
+        }
+    }
+}
+
+.table-hover {
+  *[role="listitem"]:hover {
+    background-color: @table-bg-hover;
+  }
+}
+
+.table-bordered {
+    border:none;
+    *[role="heading"], *[role="listitem"] {
+        border: 1px solid @table-border-color;
+      }
+}
+
+@media print{ 
+    .table {
+        thead {
+            th {
+                border:none !important;
+            }
+        }
+    }
+}
