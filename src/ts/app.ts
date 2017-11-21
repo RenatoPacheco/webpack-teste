@@ -14,3 +14,4 @@ document.body.appendChild(h1);
 document.body.appendChild(p);
 console.log($('body h1').html());
 toastr.info('Mensagem informativa.', 'Informação');
+toastr.warning('Mensagem informativa.', 'Informação');

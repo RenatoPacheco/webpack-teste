@@ -45,10 +45,5 @@ module.exports = {
             name: "commons",
             filename: 'commons.js'
         })
-    ],
-    devServer: {
-        contentBase: resolvePath('build'),
-        port: 9999,
-        open: true
-    },
+    ]
 }

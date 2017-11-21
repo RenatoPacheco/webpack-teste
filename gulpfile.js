@@ -13,6 +13,7 @@ const concatCss = require('gulp-concat-css');
 const concat = require('gulp-concat');
 const sequence = require('gulp-sequence');
 const clean = require('gulp-clean');
+const watchSequence = require('gulp-watch-sequence');
 
 const resolvePath = (pathToResolve = '') => path.resolve(__dirname, pathToResolve);
 const joinPath = (...pathToResolve) => path.join(__dirname, pathToResolve);
@@ -29,7 +30,7 @@ gulp.task('copy', () => {
       .pipe(gulp.dest('./build/assets/fonts'))
 });
 
-gulp.task('css-clean', () => {
+gulp.task('cssClean', () => {
     return gulp.src([
         './build/assets/css/views/**/*.css',
         './build/assets/css/app.css'])
@@ -47,7 +48,7 @@ gulp.task('less', () => {
       }));
 });
 
-gulp.task('css-concat', () => {
+gulp.task('cssConcat', () => {
     return gulp.src([
         './node_modules/font-awesome/css/font-awesome.css',
         './node_modules/toastr/build/toastr.css',
@@ -59,5 +60,14 @@ gulp.task('css-concat', () => {
       .pipe(gulp.dest('./build/assets/css/'))
 });
 
-gulp.task('css', sequence('css-clean', 'less', 'css-concat'));
+gulp.task('css', sequence('cssClean', 'less', 'cssConcat'));
+
+gulp.task('cssWatch', () => {
+    var queue = watchSequence(300);
+    watch(['./src/less/app.less', './src/less/views/**/*.less'], {
+        name: 'less',
+        emitOnGlob: false
+      }, queue.getHandler('cssClean', 'less', 'cssConcat'));
+});
+
 gulp.task('default', sequence('copy', 'css'));
