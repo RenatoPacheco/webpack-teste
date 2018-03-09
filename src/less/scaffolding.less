@@ -1,0 +1,238 @@
+﻿@import "../../node_modules/bootstrap/less/scaffolding.less";
+
+body {
+    min-width: 320px;
+    &.editor {
+        padding: 10px;
+    }
+}
+
+body, div, pre, iframe, textarea {
+    &::-webkit-scrollbar {
+        width: 1em;
+        height: 1em;
+    }
+ 
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+ 
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+}
+
+h2 {
+    padding: 0.15em 0.15em 0.15em 0.15em;
+    margin:0;
+}
+
+//==Brand panel
+.brand-panel-ligth{
+    text-align: center;
+    background: @plataform-color-1;
+    & .brand-logo-ligth img{
+        width: 50%;
+    }
+}
+.brand-panel-dark{
+    text-align: center;
+    & .brand-logo-dark img{
+        width: 50%;
+    }
+}
+
+//== Colors Structure style guide
+.pattern{
+    margin:10px;
+}
+.pattern-example{
+    margin:0 0 40px 0;
+}
+.pattern-icons .all-icons{
+    line-height:3.5;
+}
+.color-example {
+    padding: 5px;
+    width: 20%;
+    text-indent: 20%;
+    white-space: nowrap;
+    margin: 0 0 15px 0;
+}
+//grays default
+@gray-color-1: #ccc;
+@gray-color-2: #555;
+@gray-color-3: #343436;
+@gray-color-4: #28282B;
+@gray-color-5: #1E1E1E;
+@gray-color-6: #111;
+
+.gray-color-1 {
+    background: @gray-color-1;
+    color: @gray-color-1;
+}
+.gray-color-2 {
+    background: @gray-color-2;
+    color: @gray-color-2;
+}
+.gray-color-3 {
+    background: @gray-color-3;
+    color: @gray-color-3;
+}
+.gray-color-4{
+    background:@gray-color-4;
+    color:@gray-color-4;
+}
+.gray-color-5{
+    background:@gray-color-5;
+    color:@gray-color-5;
+}
+.gray-color-6{
+    background:@gray-color-6;
+    color:@gray-color-6;
+}
+//plataforma
+@plataform-color-1: #2B3D4E;
+@plataform-color-2: #256884;
+@plataform-color-3: #307AA3;
+@plataform-color-4: #348CC8;
+@plataform-color-5: #D7C04D;
+@plataform-color-6: #C74F43;
+
+.plataform-color-1{
+    background:@plataform-color-1;
+    color:@plataform-color-1;
+}
+.plataform-color-2{
+    background:@plataform-color-2;
+    color:@plataform-color-2;
+}
+.plataform-color-3{
+    background:@plataform-color-3;
+    color:@plataform-color-3;
+}
+.plataform-color-4{
+    background:@plataform-color-4;
+    color:@plataform-color-4;
+}
+.plataform-color-5{
+    background:@plataform-color-5;
+    color:@plataform-color-5;
+}
+.plataform-color-6{
+    background:@plataform-color-6;
+    color:@plataform-color-6;
+}
+
+//Provas
+@proof-color-1: #CD6E6F;
+@proof-color-2: #AA5E62;
+
+.proof-color-1{
+    background:@proof-color-1;
+    color:@proof-color-1;
+}
+.proof-color-2{
+    background:@proof-color-2;
+    color:@proof-color-2;
+}
+//Conteúdo
+@content-color-1: #62A7DC;
+@content-color-2: #508EB4;
+@content-color-3: #40748E;
+
+.content-color-1{
+    background:@content-color-1;
+    color:@content-color-1;
+}
+.content-color-2{
+    background:@content-color-2;
+    color:@content-color-2;
+}
+.content-color-3{
+    background:@content-color-3;
+    color:@content-color-3;
+}
+//Tarefa
+@assignment-color-1: #EECB57;
+@assignment-color-2: #D7C04D;
+@assignment-color-3: #D4A74C;
+
+.assignment-color-1{
+    background:@assignment-color-1;
+    color:@assignment-color-1;
+}
+.assignment-color-2{
+    background:@assignment-color-2;
+    color:@assignment-color-2;
+}
+.assignment-color-3{
+    background:@assignment-color-3;
+    color:@assignment-color-3;
+}
+//Video
+@video-color-1: #7BB07B;
+@video-color-2: #6BA96D;
+@video-color-3: #5D8B5D;
+
+.video-color-1{
+    background:@video-color-1;
+    color:@video-color-1;
+}
+.video-color-2{
+    background:@video-color-2;
+    color:@video-color-2;
+}
+.video-color-3{
+    background:@video-color-3;
+    color:@video-color-3;
+}
+
+//Utilidades
+.utility-color-1{
+    background:#7BB07B;
+    color:#7BB07B
+}
+.utility-color-2{
+    background:#447A44;
+    color:#447A44
+}
+.utility-color-3{
+    background:#EECB57;
+    color:#EECB57;
+}
+.utility-color-4{
+    background:#AA8B34;
+    color:#AA8B34;
+}
+.utility-color-5{
+    background:#CD6E6F;
+    color:#CD6E6F;
+}
+.utility-color-6{
+    background:#AA5D60;
+    color:#AA5D60
+}
+
+//==Icones
+.thumbnail-fa{
+    margin: 5px;
+}
+
+
+@media print{
+
+    a[href]:after {
+        content: none !important;
+    }
+
+    abbr[title]:after {
+        content: none !important;
+    }
+
+    acronym[title]:after {
+        content: none !important;
+    }
+
+}

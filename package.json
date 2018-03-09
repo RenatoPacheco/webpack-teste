@@ -4,19 +4,53 @@
   "description": "Projeto de teste para uso de webpack",
   "main": "''",
   "scripts": {
-    "start": "webpack-dev-server --port 9999 --content-base build",
-    "build": "webpack"
+    "start": "gulp && concurrently \"npm run server\" \"npm run devWebpack\" \"gulp cssWatch\"",
+    "build": "SET NODE_ENV=production && webpack --progress --colors -p && gulp",
+    "server": "http-server ./build -p 9999",
+    "devWebpack": "webpack --progress --colors --watch"
   },
   "author": "Renato Pacheco <renato.pacheco@outloock.com>",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "blueimp-md5": "^2.10.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-select": "^1.12.4",
+    "chartjs": "^0.3.24",
+    "concurrently": "^3.5.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^1.12.4",
+    "jquery-confirm": "^3.3.2",
+    "toastr": "^2.1.2"
+  },
   "devDependencies": {
+    "@types/blueimp-md5": "^2.7.0",
+    "@types/bootstrap": "^3.3.36",
+    "@types/bootstrap-select": "^1.11.1",
+    "@types/chartjs": "0.0.31",
+    "@types/jquery": "^3.2.16",
+    "@types/toastr": "^2.1.35",
+    "awesome-typescript-loader": "^3.3.0",
     "css-loader": "^0.28.7",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-copy": "^1.0.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-less": "^3.3.2",
+    "gulp-message": "^1.0.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-print": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sequence": "^0.4.6",
+    "gulp-watch": "^4.3.11",
+    "gulp-watch-sequence": "^1.0.0",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "style-loader": "^0.19.0",
     "ts-loader": "^3.1.1",
     "typescript": "^2.6.1",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-glob-entry": "^2.1.1"
   }
 }

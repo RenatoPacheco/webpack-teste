@@ -1,0 +1,34 @@
+﻿@import "../../node_modules/bootstrap/less/forms.less";
+
+@media (max-width: @screen-xs-max) {
+    
+    .form-control {
+        height: @input-height-large;
+        padding: @padding-large-vertical @padding-large-horizontal;
+        font-size: @font-size-large;
+        line-height: @line-height-large;
+        border-radius: @input-border-radius-large;
+    }
+    select.form-control {
+        height: @input-height-large;
+        line-height: @input-height-large;
+    }
+    textarea.form-control,
+    select[multiple].form-control {
+        height: auto;
+    }
+    .form-control-static {
+        height: @input-height-large;
+        min-height: (@line-height-computed + @font-size-large);
+        padding: (@padding-large-vertical + 1) @padding-large-horizontal;
+        font-size: @font-size-large;
+        line-height: @line-height-large;
+    }
+    .form-control-feedback,
+    .form-control + .form-control-feedback {
+        width: @input-height-large;
+        height: @input-height-large;
+        line-height: @input-height-large;
+    }
+
+}
